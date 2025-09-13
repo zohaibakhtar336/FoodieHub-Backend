@@ -39,10 +39,9 @@ app.get("/", (req, res) => {
     <h1>Welcome to FoodieHub 🍔</h1>
     <p>This is a Node.js + Express + MongoDB backend project.</p>
     <p>You can use the API endpoints to manage users, restaurants, foods, categories, and orders.</p>
-    <p>Base API URL: http://localhost:${process.env.PORT || 5000}/api/v1</p>
+    <p>Base API URL: ${req.protocol}://${req.get("host")}/api/v1</p>
   `);
 });
-
 
 // PORT
 const PORT = process.env.PORT || 5000;
